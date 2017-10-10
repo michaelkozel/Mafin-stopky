@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "639367498223",
+    "firebase_url": "https://mafin-d6384.firebaseio.com",
+    "project_id": "mafin-d6384",
+    "storage_bucket": "mafin-d6384.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:639367498223:android:1bf413caeca99f99",
+        "android_client_info": {
+          "package_name": "kozliksoft.mafin_stopky"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "639367498223-og4hkl177i2i6o1c1u7oq1mbgss19gaa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLkdZlvdKXDpSZjw3g9ovV9naJDmbYJ4A"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
