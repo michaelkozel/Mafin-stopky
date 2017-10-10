@@ -10,16 +10,20 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
 
+import com.google.firebase.messaging.FirebaseMessaging;
+
 public class MainActivity extends AppCompatActivity {
 
 
     public final static String MINUTES = "svandeliksoftware.countdown.MINUTES";
     EditText minutesAdd;
+    String topic = "MAFIN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        FirebaseMessaging.getInstance().subscribeToTopic(topic);
         minutesAdd = (EditText) findViewById(R.id.editText);
         Button button = (Button) findViewById(R.id.button);
         button.setText("Start");
@@ -30,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
     /**
      * Called when the user clicks the Send button
      */
