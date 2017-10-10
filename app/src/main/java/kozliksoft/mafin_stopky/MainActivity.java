@@ -13,14 +13,14 @@ import android.widget.TimePicker;
 public class MainActivity extends AppCompatActivity {
 
 
-    public final static String HOURS = "svandeliksoftware.countdown.HOURS";
     public final static String MINUTES = "svandeliksoftware.countdown.MINUTES";
-    EditText minutesAdd ;
+    EditText minutesAdd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         minutesAdd = (EditText)findViewById(R.id.editText);
+        minutesAdd = (EditText) findViewById(R.id.editText);
         Button button = (Button) findViewById(R.id.button);
         button.setText("Start");
         button.setOnClickListener(new View.OnClickListener() {
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void prepareCounting(View view) {
         Intent intent = new Intent(this, DisplayCounting.class);
-int minutes = Integer.parseInt(minutesAdd.getText().toString());
+        int minutes = Integer.parseInt(minutesAdd.getText().toString());
 
 
         //button.setText(timePicker.getCurrentMinute().toString());
