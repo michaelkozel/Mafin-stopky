@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kozliksoft.mafin_stopky">
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/muffin"
@@ -16,6 +15,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".DisplayCounting" android:screenOrientation="landscape"/>
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FirebaseIDService"
+            android:enabled="true"
+            android:exported="true"></service>
     </application>
 
 </manifest>

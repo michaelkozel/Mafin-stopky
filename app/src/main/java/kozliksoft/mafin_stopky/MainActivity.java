@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TimePicker;
 
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,15 +20,19 @@ public class MainActivity extends AppCompatActivity {
     public final static String MINUTES = "svandeliksoftware.countdown.MINUTES";
     EditText minutesAdd;
     String topic = "MAFIN";
+    String topic2 = "mafin";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        FirebaseMessaging.getInstance().subscribeToTopic(topic);
         minutesAdd = (EditText) findViewById(R.id.editText);
         Button button = (Button) findViewById(R.id.button);
         button.setText("Start");
+        Log.d("TAG","Test log");
+        FirebaseMessaging.getInstance().subscribeToTopic(topic);
+        FirebaseMessaging.getInstance().subscribeToTopic(topic2);
+        Log.d("TAG", FirebaseInstanceId.getInstance().getToken());
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

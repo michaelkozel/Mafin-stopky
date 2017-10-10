@@ -20,14 +20,28 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         // If the application is in the foreground handle both data and notification messages here.
         // Also if you intend on generating your own notifications as a result of a received FCM
         // message, here is where that should be initiated.
-        Log.d(TAG, "From: " + remoteMessage.getFrom());
-        Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
-        Intent resultIntent = new Intent(this, MainActivity.class);
-        String minutes = remoteMessage.getData().get("MINUTES");
-        Toast.makeText(getApplicationContext(),minutes,Toast.LENGTH_SHORT).show();
-        Intent i = new Intent(this,DisplayCounting.class);
-        i.putExtra(MainActivity.MINUTES, minutes);
-        startActivity(i);
+  //      Log.d(TAG, "From: " + remoteMessage.getFrom());
+//        Log.d(TAG, "Notification Message Body: " + remoteMessage.getNotification().getBody());
+
+try{
+    int minutes = Integer.parseInt(remoteMessage.getData().get("minutes"));
+    Intent i = new Intent(this,DisplayCounting.class);
+
+    i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    i.putExtra(MainActivity.MINUTES, minutes);
+    startActivity(i);
+}
+       catch (Exception e)
+       {
+
+         Log.d("TAG","Chyba");
+
+       }
+
+
+
+
+
     }
 
 
