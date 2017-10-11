@@ -39,7 +39,6 @@ public class DisplayCounting extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
         }
-
     }
 
     protected void startCounting() throws ParseException {
@@ -54,8 +53,6 @@ public class DisplayCounting extends AppCompatActivity {
         CountDownTimer timer = new CountDownTimer(difference, 500) {
             @Override
             public void onTick(long millisUntilFinished) {
-
-
                 long second = (millisUntilFinished / 1000) % 60;
                 long minute = (millisUntilFinished / (1000 * 60)) % 60;
                 long hour = (millisUntilFinished / (1000 * 60 * 60)) % 24;
