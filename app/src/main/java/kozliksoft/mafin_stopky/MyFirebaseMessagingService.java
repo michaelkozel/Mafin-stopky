@@ -32,9 +32,8 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
         try {
             appContext = getBaseContext();//Get the context here
             int minutes = Integer.parseInt(remoteMessage.getData().get("minutes"));
-            Intent i = new Intent(this, DisplayCounting.class);
-
-            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            Intent i = new Intent(appContext, DisplayCounting.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             i.putExtra(MainActivity.MINUTES, minutes);
             startActivity(i);
         } catch (Exception e) {
