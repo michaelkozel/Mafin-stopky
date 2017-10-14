@@ -9,8 +9,9 @@
         android:textColor="@color/White"
         android:layout_width="match_parent"
         android:id="@+id/txbTime"
-        android:textSize="400dp"
+        android:textSize="600sp"
         android:layout_height="match_parent"
         android:gravity="center"
+        android:layout_gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
 </LinearLayout>

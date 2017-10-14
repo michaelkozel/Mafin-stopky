@@ -79,6 +79,7 @@ public class DisplayCounting extends AppCompatActivity {
                 }
                 txbTime.setText(time);
             }
+
             @Override
             public void onFinish() {
                 txbTime.setTextColor(Color.parseColor("#ff0000"));
@@ -92,7 +93,7 @@ public class DisplayCounting extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
         super.onBackPressed();
